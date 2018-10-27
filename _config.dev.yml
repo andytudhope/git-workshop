@@ -6,7 +6,7 @@ language: en
 timezone: UTC
 
 url: https://dev.status.im/
-root: /
+root: /git-workshop/
 permalink: news/:year/:month/:day/:title/
 archive_dir: news
 code_dir: downloads/code

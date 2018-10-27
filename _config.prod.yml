@@ -6,7 +6,7 @@ language: en
 timezone: UTC
 
 url: https://andytudhope.github.io
-root: /
+root: /git-workshop/
 permalink: news/:year/:month/:day/:title/
 archive_dir: news
 code_dir: downloads/code
