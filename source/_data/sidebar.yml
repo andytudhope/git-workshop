@@ -1,0 +1,5 @@
+docs:
+  use_status:
+    index: index.html
+  tutorials:
+    index_tutorials: index.html

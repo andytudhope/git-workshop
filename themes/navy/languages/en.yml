@@ -1,0 +1,22 @@
+menu:
+  docs: Docs
+  developer_tools: Developer Tools
+  extensions: Extensions
+  wip: WIP
+  search: Search
+  blog: Blog
+  tutorials: Tutorials
+
+page:
+  contents: Contents
+  back_to_top: Back to Top
+  improve: Improve this doc
+  prev: Prev
+  next: Next
+  last_updated: "Last updated: %s"
+
+sidebar:
+  docs:
+    index: Technical Documentation
+    tutorials: Tutorials
+    index_tutorials: First Tutorial
