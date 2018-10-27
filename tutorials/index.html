@@ -11,7 +11,7 @@
   
   <!-- Icon -->
   <meta name="msapplication-TileColor" content="#ff9c00">
-  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <meta name="msapplication-TileImage" content="/git-workshop/icon/mstile-144x144.png">
 
   <link rel="icon" type="image/png" href="/img/logo-16.png" sizes="16x16">
   <link rel="icon" type="image/png" href="/img/logo-32.png" sizes="32x32">
@@ -21,8 +21,8 @@
   <link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152.png?v=0.0.5">
   <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180.png?v=0.0.5">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon-1024.png?v=0.0.5">
-  <link rel="stylesheet" href="/css/main.min.css">
-  <link rel="alternate" href="/atom.xml" title="Status">
+  <link rel="stylesheet" href="/git-workshop/css/main.min.css">
+  <link rel="alternate" href="/git-workshop/atom.xml" title="Status">
   <meta property="og:image" content="/img/share.png">
   <meta property="og:title" content="Status, a Mobile Client for Ethereum 2.0">
 </head>
@@ -272,9 +272,9 @@
               <div class="article-content" itemprop="articleBody">
                 <h1 id="Your-First-Chat-Extension" class="article-heading"><a href="#Your-First-Chat-Extension" class="headerlink" title="Your First Chat Extension"></a>Your First Chat Extension<a class="article-anchor" href="#Your-First-Chat-Extension" aria-hidden="true"></a></h1><p>One of the main use case for extensions is to add new chat commands. This tutorial will go step by step through the creation and deployment of a chat command allowing to send NFTs.</p>
 <h2 id="Add-meta-data" class="article-heading"><a href="#Add-meta-data" class="headerlink" title="Add meta data"></a>Add meta data<a class="article-anchor" href="#Add-meta-data" aria-hidden="true"></a></h2><p>First step is to create the skeleton extension with some relevant metadata:</p>
-<pre class=" language-clojure"><code class="language-clojure">{meta {:name          "My command name"
-       :description   "My command description"
-       :documentation "Some more details can go there"}}
+<pre><code class="clojure">{meta {:name          &quot;My command name&quot;
+       :description   &quot;My command description&quot;
+       :documentation &quot;Some more details can go there&quot;}}
 </code></pre>
 <p>Metadata will be displayed to the end user before installing an extension.</p>
 <h2 id="Define-hook-entry-point-chat-command" class="article-heading"><a href="#Define-hook-entry-point-chat-command" class="headerlink" title="Define hook entry point (chat command)"></a>Define hook entry point (chat command)<a class="article-anchor" href="#Define-hook-entry-point-chat-command" aria-hidden="true"></a></h2><p>Hooks identify what part of status will be extended. Each hook has a unique identifier and a set of key/value elements specific to this hook.<br>An extension can implement several hooks.</p>
@@ -292,7 +292,7 @@
 <li>public-chats</li>
 </ul>
 <p>Here we will demonstrate <code>personal-chats</code>.</p>
-<pre class=" language-clojure"><code class="language-clojure">{hooks/commands.collectible
+<pre><code class="clojure">{hooks/commands.collectible
  {...
   :scope #{:personal-chats}} ;; Could be #{:personal-chats :group-chats}
 </code></pre>
@@ -302,7 +302,7 @@
 <p>More details can be found <a href="https://status-im.github.io/pluto/docs/concepts/Anatomy.html" target="_blank" rel="noopener">here</a>.</p>
 <p>Previews receive data from status encapsulating the parameters provided by the end user and some relevant contextual information. Those can be accessed in a view using the <code>properties</code> reference.</p>
 <p>Our short preview definition:</p>
-<pre class=" language-clojure"><code class="language-clojure">{views/short-preview
+<pre><code class="clojure">{views/short-preview
  (let [{{{symbol :symbol} :params} :content outgoing :outgoing} properties]
    [view {:flex-direction :row
           :align-items    :flex-start}
@@ -363,9 +363,9 @@ In this tutorial `:text` and `:number` will be used.
 <p>Once loaded, details about an extension are available. An extension can then be installed. Once installed all hooks are <code>active</code>. Any extension can then be <code>deactivated</code> or re-<code>activated</code>. Associated hooks will then be removed/added from Status. </p>
 <p>You can now use your new extension from within a 1-1 chat!</p>
 <p><img src="/tutorials/thumbnails/collectible-chat-command.gif" alt="collectibles in chat"></p>
-<h2 id="Full-extension-code" class="article-heading"><a href="#Full-extension-code" class="headerlink" title="Full extension code"></a>Full extension code<a class="article-anchor" href="#Full-extension-code" aria-hidden="true"></a></h2><pre class=" language-clojure"><code class="language-clojure">{meta {:name          "Collectibles"
-       :description   "Demonstration of collectible command"
-       :documentation "Some nice documentation"}
+<h2 id="Full-extension-code" class="article-heading"><a href="#Full-extension-code" class="headerlink" title="Full extension code"></a>Full extension code<a class="article-anchor" href="#Full-extension-code" aria-hidden="true"></a></h2><pre><code class="clojure">{meta {:name          &quot;Collectibles&quot;
+       :description   &quot;Demonstration of collectible command&quot;
+       :documentation &quot;Some nice documentation&quot;}
 
  views/preview
  (let [{{{symbol :symbol token :token tx-hash :tx-hash} :params} :content outgoing :outgoing timestamp-str :timestamp-str} properties
@@ -404,7 +404,7 @@ hooks/commands.collectible
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2018-10-27T09:20:27.383Z" itemprop="dateModified">page.last_updated</time>
+                <time class="article-footer-updated" datetime="2018-10-27T10:33:09.826Z" itemprop="dateModified">Last updated: 2018-10-27</time>
                 
               </footer>
             </div>
@@ -469,6 +469,6 @@ hooks/commands.collectible
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>	
-<script src="/js/vendor.min.js"></script>
+<script src="/git-workshop/js/vendor.min.js"></script>
 </body>
 </html>
